@@ -87,28 +87,20 @@ public class MainActivity extends BaseActivity<ActivityMainBinding,MainActivityV
             alertDialog.getWindow().setLayout(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         }
 
-        ok_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!TextUtils.isEmpty(title_ed.getText()) && !TextUtils.isEmpty(desc_ed.getText())) {
-                    NotesModel notesModel=new NotesModel(title_ed.getText().toString(),desc_ed.getText().toString());
-                    mainActivityVM.mNotesRepository.insert(notesModel);
-                    alertDialog.dismiss();
-                }else {
-                    if (TextUtils.isEmpty(title_ed.getText()))
-                        title_ed.setError("Field can't be empty");
-                    if (TextUtils.isEmpty(desc_ed.getText()))
-                        desc_ed.setError("Field can't be empty");
-                }
+        ok_button.setOnClickListener(v -> {
+            if (!TextUtils.isEmpty(title_ed.getText()) && !TextUtils.isEmpty(desc_ed.getText())) {
+                NotesModel notesModel=new NotesModel(title_ed.getText().toString(),desc_ed.getText().toString());
+                mainActivityVM.mNotesRepository.insert(notesModel);
+                alertDialog.dismiss();
+            }else {
+                if (TextUtils.isEmpty(title_ed.getText()))
+                    title_ed.setError("Field can't be empty");
+                if (TextUtils.isEmpty(desc_ed.getText()))
+                    desc_ed.setError("Field can't be empty");
             }
         });
 
-        cancel_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                alertDialog.dismiss();
-            }
-        });
+        cancel_button.setOnClickListener(v -> alertDialog.dismiss());
 
         if (alertDialog.getWindow()!=null) {
 //            WindowManager.LayoutParams wmlp = alertDialog.getWindow().getAttributes();

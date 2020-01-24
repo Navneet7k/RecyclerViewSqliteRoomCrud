@@ -55,12 +55,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> 
         public void bind(NotesModel notesModel) {
             binding.setItemModel(notesModel);
 
-            binding.deleteBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    notesInteractionListener.onNoteDeleted(notesModel.getNotesId());
-                }
-            });
+            binding.deleteBtn.setOnClickListener(v -> notesInteractionListener.onNoteDeleted(notesModel.getNotesId()));
         }
     }
 }

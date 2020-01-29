@@ -9,26 +9,140 @@
             name="viewModel"
             type="com.example.recyclerviewsqliteroomcrud.view.MainActivityVM" />
     </data>
-    <RelativeLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/black"
+        android:fitsSystemWindows="true"
         >
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_height="200dp"
+            android:layout_width="match_parent"
+            android:background="@color/black"
+            >
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|enterAlways"
+                android:fitsSystemWindows="true"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleMarginStart="48dp"
+                app:expandedTitleMarginEnd="64dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/issue_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:padding="10dp"
+                    android:fitsSystemWindows="true"
+                    app:layout_collapseMode="parallax"/>
+<!--                <ImageView-->
+<!--                    android:id="@+id/backdrop"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="200dp"-->
+<!--                    android:scaleType="centerCrop"-->
+<!--                    android:fitsSystemWindows="true"-->
+<!--                    app:layout_collapseMode="parallax"-->
+<!--                    android:src="@drawable/sample" />-->
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
         <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@+id/toolbar"
             android:id="@+id/note_items_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/black"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:layout_collapseMode="pin"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+
+                <RelativeLayout
+                    android:id="@+id/closeBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="?attr/actionBarItemBackground">
+
+                    <!--                <androidx.appcompat.widget.AppCompatImageView-->
+                    <!--                    android:layout_width="20dp"-->
+                    <!--                    android:layout_height="20dp"-->
+                    <!--                    android:layout_centerInParent="true"-->
+                    <!--                    android:layout_margin="8dp"-->
+                    <!--                    android:tint="#ffffff"-->
+                    <!--                    app:srcCompat="@drawable/ic_arrow_back" />-->
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_toLeftOf="@+id/app_header"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:scaleType="fitXY"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/app_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="Reader's Checkpoints"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp" />
+
+                <RelativeLayout
+                    android:id="@+id/chooseAlias"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="10dp"
+                    android:background="?attr/actionBarItemBackground">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/profileIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="8dp"
+                        android:tint="@color/green"
+                        app:srcCompat="@drawable/ic_person_blue_24dp" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:src="@android:drawable/ic_menu_add"
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
+            android:layout_gravity="end|bottom"
+            app:layout_anchorGravity="bottom|right|end"
             android:layout_margin="16dp"
             android:clickable="true"
             app:rippleColor="#ffffff"/>
-    </RelativeLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </layout>

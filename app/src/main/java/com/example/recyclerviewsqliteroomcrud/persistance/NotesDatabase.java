@@ -2,9 +2,11 @@ package com.example.recyclerviewsqliteroomcrud.persistance;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -24,10 +26,29 @@ public abstract class NotesDatabase extends RoomDatabase {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             NotesDatabase.class, "notes_database")
+                            .addCallback(sRoomDatabaseCallback)
                             .build();
                 }
             }
         }
         return INSTANCE;
     }
+
+    private static RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback() {
+        @Override
+        public void onOpen(@NonNull SupportSQLiteDatabase db) {
+            super.onOpen(db);
+
+            databaseWriteExecutor.execute(() -> {
+
+                NotesDao dao = INSTANCE.notesDao();
+                dao.deleteAll();
+                dao.insert(new NotesModel("This is a sample article title","This is a sample article description This is a sample article description This is a sample article description This is a sample article description"));
+                dao.insert(new NotesModel("This is a sample article title","This is a sample article description This is a sample article description This is a sample article description This is a sample article description"));
+                dao.insert(new NotesModel("This is a sample article title","This is a sample article description This is a sample article description This is a sample article description This is a sample article description"));
+                dao.insert(new NotesModel("This is a sample article title","This is a sample article description This is a sample article description This is a sample article description This is a sample article description"));
+                dao.insert(new NotesModel("This is a sample article title","This is a sample article description This is a sample article description This is a sample article description This is a sample article description"));
+            });
+        }
+    };
 }

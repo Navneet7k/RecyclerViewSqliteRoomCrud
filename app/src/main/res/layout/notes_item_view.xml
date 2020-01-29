@@ -8,8 +8,11 @@
             type="NotesModel" />
     </data>
     <androidx.cardview.widget.CardView
-        app:cardCornerRadius="5dp"
+        android:background="@color/tool_bg"
+        app:cardBackgroundColor="@color/tool_bg"
+        app:cardCornerRadius="10dp"
         android:layout_margin="5dp"
+        android:elevation="7dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     <LinearLayout
@@ -18,24 +21,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
+            android:layout_centerVertical="true"
+            android:textSize="24sp"
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:textColor="@color/dark_grey"
             android:id="@+id/title"
-            android:textColor="@color/colorAccent"
             android:text="@{itemModel.notesTitle}"
             android:padding="3dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <TextView
             android:id="@+id/desc"
-            android:textColor="@color/colorAccent"
             android:text="@{itemModel.notesDesc}"
             android:padding="3dp"
+            android:textSize="18sp"
+            android:textColor="@color/green"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/delete_btn"
             android:text="DELETE"
             android:padding="5dp"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/green"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding,MainActivityV
 
     private ActivityMainBinding binding;
     private NotesAdapter notesAdapter;
+    private IssuesAdapter issuesAdapter;
     private AlertDialog alertDialog;
 
     @Inject
@@ -55,11 +57,14 @@ public class MainActivity extends BaseActivity<ActivityMainBinding,MainActivityV
         binding=getViewDataBinding();
 
         binding.noteItemsList.setLayoutManager(new LinearLayoutManager(this));
+        binding.issueList.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL,false));
 
         mainActivityVM.mNotesRepository.getAllNotes().observe(this,articleModels -> {
             if (articleModels!=null) {
+                issuesAdapter=new IssuesAdapter(this, new ArrayList<>(articleModels),null);
                 notesAdapter=new NotesAdapter(this, new ArrayList<>(articleModels), note_id -> mainActivityVM.mNotesRepository.deleteNote(note_id));
                 binding.noteItemsList.setAdapter(notesAdapter);
+                binding.issueList.setAdapter(issuesAdapter);
             }
         });
 

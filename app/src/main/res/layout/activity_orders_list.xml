@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+
+        <variable
+            name="viewModel"
+            type="zingmyorder.kitchen.mobile.view.orders.vm.OrdersListActivityVM" />
+
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.orders.OrdersListActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/vrob_clr_white"
+        android:orientation="vertical">
+
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:id="@+id/toolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:animateLayoutChanges="true"-->
+<!--            android:background="@color/vrob_color_pink"-->
+<!--            android:contentInsetEnd="0dp"-->
+<!--            android:contentInsetLeft="0dp"-->
+<!--            android:contentInsetRight="0dp"-->
+<!--            android:contentInsetStart="0dp"-->
+<!--            android:gravity="center"-->
+<!--            app:contentInsetEnd="0dp"-->
+<!--            app:contentInsetLeft="0dp"-->
+<!--            app:contentInsetRight="0dp"-->
+<!--            app:contentInsetStart="0dp">-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="?attr/actionBarSize">-->
+
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/closeBtn"-->
+<!--                    android:background="?attr/actionBarItemBackground"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:onClick="@{()-> viewModel.onClosePage()}">-->
+
+<!--                    <androidx.appcompat.widget.AppCompatImageView-->
+<!--                        android:layout_width="20dp"-->
+<!--                        android:layout_height="20dp"-->
+<!--                        android:layout_alignParentStart="true"-->
+<!--                        android:layout_alignParentLeft="true"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        android:layout_marginStart="8dp"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:layout_marginEnd="8dp"-->
+<!--                        android:layout_marginBottom="8dp"-->
+<!--                        android:tint="@color/vrob_clr_white"-->
+<!--                        android:src="@drawable/ic_close" />-->
+
+<!--                </RelativeLayout>-->
+
+<!--                <com.example.architecturebaseapp.custom.CustomTextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:textColor="@color/vrob_clr_white"-->
+<!--                    android:textSize="16sp" />-->
+
+<!--            </RelativeLayout>-->
+
+<!--        </androidx.appcompat.widget.Toolbar>-->
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            style="@style/MyCustomCapTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMaxWidth="0dp"
+            app:tabGravity="fill"
+
+            app:tabMode="fixed"
+            android:background="@color/vrob_clr_white"
+            android:minHeight="?attr/actionBarSize"
+            app:tabIndicatorColor="@color/colorPrimary"
+            app:tabIndicatorHeight="2dp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:background="@drawable/tab_divider" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+        <View
+            android:visibility="gone"
+            android:id="@+id/bg"
+            android:background="#99000000"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <include
+            android:id="@+id/customer_care_bottomsheet"
+            layout="@layout/customer_care_bottomsheet" />
+        <LinearLayout
+            android:layout_marginBottom="35dp"
+            android:layout_gravity="bottom|end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_reload"
+                android:layout_margin="16dp"
+                android:alpha="0.3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                app:backgroundTint="@color/zing_accept_btn"
+                android:onClick="@{()->viewModel.onReload()}"
+                app:elevation="6dp"
+                android:src="@drawable/ic_reload"
+                app:pressedTranslationZ="12dp"
+                android:tint="@color/vrob_clr_white" />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_help"
+                android:layout_margin="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|start"
+                android:alpha="0.3"
+                app:backgroundTint="@color/zing_accept_btn"
+                android:onClick="@{()->viewModel.onHelp()}"
+                app:elevation="6dp"
+                android:src="@drawable/ic_chat_bubble_24"
+                app:pressedTranslationZ="12dp"
+                android:tint="@color/vrob_clr_white" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_wifi"
+                android:layout_margin="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|start"
+                android:alpha="0.3"
+                app:backgroundTint="@color/zing_accept_btn"
+                android:onClick="@{()->viewModel.onWifi()}"
+                app:elevation="6dp"
+                android:src="@drawable/ic_wifi"
+                app:pressedTranslationZ="12dp"
+                android:tint="@color/vrob_clr_white" />
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

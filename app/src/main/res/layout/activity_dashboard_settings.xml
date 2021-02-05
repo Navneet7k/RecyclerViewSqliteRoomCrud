@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="zingmyorder.kitchen.mobile.view.settings.DashboardSettingsVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DashboardSettingsActivity">
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/mood_green">
+
+            <LinearLayout
+                android:onClick="@{()->viewModel.onClosePage()}"
+                android:id="@+id/back_view"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="?attr/actionBarItemBackground"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="20dp"
+                    android:tint="@color/vrob_clr_white"
+                    android:src="@drawable/back1" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Settings"
+                android:textColor="@color/vrob_clr_white"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:background="?attr/selectableItemBackground"
+                android:onClick="@{()->viewModel.onReloadPage()}"
+                android:id="@+id/back_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <ImageView
+                    android:id="@+id/IV_refershView"
+                    android:layout_width="30dp"
+                    android:layout_height="20dp"
+                    android:tint="@color/vrob_clr_white"
+                    android:src="@drawable/ic_reload" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/loadingView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:elevation="8dp">
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="Please wait.."
+                    android:textColor="@color/colorBlack"
+                    android:textSize="18sp" />
+
+                <!--                        <androidx.appcompat.widget.AppCompatImageView-->
+                <!--                            android:id="@+id/storeIV"-->
+                <!--                            srcCompat="@{data.details.logo}"-->
+                <!--                            android:layout_width="match_parent"-->
+                <!--                            android:layout_height="@dimen/dim_60dp"-->
+                <!--                            android:layout_marginLeft="@dimen/v_rob_dimen_30dp"-->
+                <!--                            android:layout_marginTop="@dimen/v_rob_dim_5dp"-->
+                <!--                            android:layout_marginRight="@dimen/v_rob_dimen_30dp" />-->
+
+                <!--                        <com.cashback.online.shopping.paygyft.custom.VRobTextView-->
+                <!--                            android:id="@+id/offerTV"-->
+                <!--                            android:layout_width="match_parent"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:layout_marginTop="@dimen/v_rob_dim_10dp"-->
+                <!--                            android:gravity="center"-->
+                <!--                            android:text="@{data.details.offer}"-->
+                <!--                            android:textColor="@color/vrob_color_pink"-->
+                <!--                            android:textSize="@dimen/dim_18sp" />-->
+
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="web_loading.json"
+                    app:lottie_loop="true" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <WebView
+            android:layout_below="@+id/toolbar"
+            android:id="@+id/dashbaordVW"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+    </RelativeLayout>
+</layout>

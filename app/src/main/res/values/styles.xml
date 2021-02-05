@@ -8,4 +8,48 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MyCustomCapTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/MyCustomAllCapsTabText</item>
+        <item name="tabBackground">@drawable/tab_color_selector</item>
+        <item name="tabSelectedTextColor">@color/vrob_clr_white</item>
+    </style>
+
+    <style name="Signup.EditText" parent="Theme.AppCompat">
+        <item name="android:background">@drawable/img_bg_edt_login</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColorHint">@color/vrob_clr_grey_3</item>
+        <item name="android:textColor">@color/vrob_clr_toolbar_signup</item>
+        <item name="android:layout_marginBottom">15dp</item>
+    </style>
+
+    <style name="MyCustomAllCapsTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+        <item name="textAllCaps">false</item>
+        <!--        <item name="fontPath">fonts/hevetica.ttf</item>-->
+        <item name="android:textColor">@color/vrob_clr_toolbar_signup</item>
+    </style>
+
+    <style name="FullScreenTheme" parent="Theme.AppCompat.Light">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowAnimationStyle">@style/windowAnim</item>
+    </style>
+
+    <style name="windowAnim">
+        <item name="android:activityOpenEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:activityOpenExitAnimation">@android:anim/fade_out</item>
+        <item name="android:activityCloseEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:activityCloseExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_up_dialog</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_down</item>
+    </style>
+    <!-- Animation for dialog box -->
+    <style name="DialogSlideAnim" parent="@android:style/Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+    </style>
 </resources>

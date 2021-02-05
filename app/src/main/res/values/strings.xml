@@ -1,3 +1,37 @@
 <resources>
-    <string name="app_name">RecyclerViewSqliteRoomCrud</string>
+    <string name="app_name">Zing</string>
+    <string name="vrob_email_chars"><![CDATA[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.@!#$%&\'*+-/=?^_`{|}~;0123456789]]></string>
+    <string name="str_email_address">Enter Email Address</string>
+    <string name="str_full_name">Enter Full Name</string>
+    <string name="str_password">Enter Password</string>
+
+    <plurals name="str_item_total">
+        <item quantity="one">%1$d item total</item>
+        <item quantity="other">%1$d items total</item>
+    </plurals>
+
+
+    <string-array name="hours_array">
+        <item>00</item>
+        <item>01</item>
+        <item>02</item>
+    </string-array>
+
+    <string-array name="minutes_array">
+        <item>00</item>
+        <item>05</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>35</item>
+        <item>40</item>
+        <item>45</item>
+        <item>50</item>
+        <item>55</item>
+        <item>60</item>
+        <item>90</item>
+        <item>120</item>
+    </string-array>
 </resources>

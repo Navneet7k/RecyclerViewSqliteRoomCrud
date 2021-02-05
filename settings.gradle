@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='RecyclerViewSqliteRoomCrud'
+rootProject.name='ArchitectureBaseApp'

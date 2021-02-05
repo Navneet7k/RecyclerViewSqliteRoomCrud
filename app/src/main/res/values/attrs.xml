@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MyCustomEditText">
+        <attr name="edt_fontface" format="string"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="LinearLayoutAnimation">
+        <attr name="startAnimation" format="boolean" />
+        <attr name="startRecursiveAnimation" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomTextView">
+        <attr name="tv_fontface" format="string"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="MyCustomButton">
+        <attr name="fontface" format="string"></attr>
+    </declare-styleable>
+</resources>

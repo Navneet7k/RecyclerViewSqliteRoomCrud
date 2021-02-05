@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="zingmyorder.kitchen.mobile.view.settings.AppSettingsActivityVM" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.settings.AppSettingsActivity">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:background="@color/clr_tab_grey"
+            android:contentInsetStart="0dp"
+            android:contentInsetLeft="0dp"
+            android:contentInsetEnd="0dp"
+            android:contentInsetRight="0dp"
+            android:gravity="center"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+
+                <RelativeLayout
+                    android:id="@+id/closeBtn"
+                    android:onClick="@{()->viewModel.onClosePage()}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="?attr/actionBarItemBackground"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="8dp"
+                        android:tint="@color/vrob_clr_white"
+                        android:src="@drawable/ic_arrow_back" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="APP SETTINGS"
+                    android:layout_centerVertical="true"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@+id/closeBtn"
+                    android:textColor="@color/vrob_clr_white"
+                    android:textSize="18sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/saveBtn"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginRight="20dp"
+                    android:tint="@color/vrob_clr_white" />
+
+            </RelativeLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/wifiCard"
+            android:background="?attr/selectableItemBackground"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="@{()->viewModel.onWifiSettings()}"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardElevation="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:padding="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:textColor="@color/mood_green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:text="WIFI SETTINGS"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:text="Enable wifi options from your tablet/phone device settings"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:background="?attr/selectableItemBackground"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="@{()->viewModel.onRingtonePick()}"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardElevation="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:padding="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:textColor="@color/mood_green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:text="NOTIFICATION RINGTONE"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:text="Choose a default notification tone to alert when you receive an order"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/notifSyncCard"
+            android:background="?attr/selectableItemBackground"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="@{()->viewModel.notificationSync()}"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardElevation="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:padding="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:textColor="@color/mood_green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:text="NOTIFICATION SYNC"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:text="Trouble receiving notifications after an update? Click here to sync notification settings"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+        <View
+            android:visibility="gone"
+            android:id="@+id/bg"
+            android:background="#99000000"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <include
+            bind:viewModel="@{viewModel}"
+            android:id="@+id/pick_ringtone_layout"
+            layout="@layout/pick_ringtone_bottomsheet" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

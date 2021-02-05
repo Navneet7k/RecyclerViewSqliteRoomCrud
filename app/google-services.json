@@ -1,0 +1,156 @@
+{
+  "project_info": {
+    "project_number": "561140263661",
+    "firebase_url": "https://zingmyorderapp.firebaseio.com",
+    "project_id": "zingmyorderapp",
+    "storage_bucket": "zingmyorderapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561140263661:android:c28f7823df6fc7c3d8bae4",
+        "android_client_info": {
+          "package_name": "com.app.zingmyorderapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "561140263661-q5l6b04h15u11mmcnigvmdqiuidcbvjs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJKzoPDaJNOVReeejX1nAolVOAhaRtiJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "561140263661-q5l6b04h15u11mmcnigvmdqiuidcbvjs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561140263661:android:f3220ab2f05a87fcd8bae4",
+        "android_client_info": {
+          "package_name": "com.restaurant.zingmyorder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "561140263661-q5l6b04h15u11mmcnigvmdqiuidcbvjs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJKzoPDaJNOVReeejX1nAolVOAhaRtiJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "561140263661-q5l6b04h15u11mmcnigvmdqiuidcbvjs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561140263661:android:2f9fd14e37aca893d8bae4",
+        "android_client_info": {
+          "package_name": "zingmyorder.kitchen.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "561140263661-q5l6b04h15u11mmcnigvmdqiuidcbvjs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJKzoPDaJNOVReeejX1nAolVOAhaRtiJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "561140263661-q5l6b04h15u11mmcnigvmdqiuidcbvjs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561140263661:android:40c03b2c2f53504fd8bae4",
+        "android_client_info": {
+          "package_name": "zingmyorder.kitchen.mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "561140263661-q5l6b04h15u11mmcnigvmdqiuidcbvjs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJKzoPDaJNOVReeejX1nAolVOAhaRtiJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "561140263661-q5l6b04h15u11mmcnigvmdqiuidcbvjs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561140263661:android:11fefd5096698fded8bae4",
+        "android_client_info": {
+          "package_name": "zingmyorder.kitchen.virtualkitchen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "561140263661-q5l6b04h15u11mmcnigvmdqiuidcbvjs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJKzoPDaJNOVReeejX1nAolVOAhaRtiJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "561140263661-q5l6b04h15u11mmcnigvmdqiuidcbvjs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

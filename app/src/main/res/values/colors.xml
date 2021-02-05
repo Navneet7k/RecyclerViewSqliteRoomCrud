@@ -3,4 +3,26 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="colorBlack">#000000</color>
+<!--    <color name="vrob_color_pink">#00A918</color>-->
+    <color name="vrob_color_pink">#ffa500</color>
+    <color name="vrob_clr_white">#FFFFFF</color>
+    <color name="vrob_clr_toolbar_signup">#052037</color>
+    <color name="vrob_clr_grey_3">#797979</color>
+    <color name="textDarkDisabled">#61000000</color>
+    <color name="vrob_clr_btn_green">#155277</color>
+    <color name="mood_green">#01A368</color>
+    <color name="zing_red">#E70B0B</color>
+    <color name="light_grey">#bbbbbb</color>
+    <color name="vrob_color_bg_lght1">#cff3f9</color>
+    <color name="clr_tab_grey">#5a6268</color>
+    <color name="zing_text">#425a6d</color>
+    <color name="zing_accept_btn">#272b30</color>
+    <color name="dialog_next_btn">#343a40</color>
+    <color name="reddish_grey">#FF7F7F</color>
+    <color name="color_nav_unselected">#9DA7B0</color>
+    <color name="vrob_clr_grey_5">#636161</color>
+    <color name="item_bg">#eef0f1</color>
+    <color name="zing_light_green">#99ff99</color>
+    <color name="lightest_grey">#F0F0F0</color>
 </resources>

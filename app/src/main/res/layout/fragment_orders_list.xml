@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="zingmyorder.kitchen.mobile.view.orders.vm.OrdersListVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ordersRV"
+            android:layout_above="@+id/allOrderBtnLL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:visibility="gone"
+            android:gravity="center"
+            android:id="@+id/emptyTV"
+            android:layout_margin="@dimen/dp_30"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Only New Orders that are pending to be accepted will be seen here"/>
+        <TextView
+            android:textColor="@color/mood_green"
+            android:visibility="gone"
+            android:gravity="center"
+            android:id="@+id/addressTV"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp" />
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/allOrderBtnLL"
+            android:padding="@dimen/dim_5dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/zing_accept_btn">
+            <TextView
+                android:onClick="@{()->viewModel.onAllOrdersClick()}"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/vrob_clr_white"
+                android:text="All Orders / Refund Orders"/>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

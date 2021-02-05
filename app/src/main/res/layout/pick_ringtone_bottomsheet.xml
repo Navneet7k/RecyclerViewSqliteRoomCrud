@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="zingmyorder.kitchen.mobile.view.settings.AppSettingsActivityVM" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        tools:showIn="@layout/activity_app_settings">
+
+        <TextView
+            android:background="@color/zing_accept_btn"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/vrob_clr_white"
+            android:layout_marginBottom="8dp"
+            android:text="Please choose a Ringtone" />
+
+        <View
+            android:visibility="gone"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.05dp"
+            android:background="@color/color_nav_unselected" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_margin="16dp"
+            tools:listitem="@layout/ring_tone_itemview"
+            android:id="@+id/ringListRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:onClick="@{()->viewModel.onCloseSheet()}"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:id="@+id/btnClose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/zing_accept_btn"
+            android:text="CLOSE"
+            android:textColor="#fff" />
+
+    </LinearLayout>
+</layout>

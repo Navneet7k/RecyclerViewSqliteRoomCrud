@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="zingmyorder.kitchen.mobile.view.RegistrationViewModel" />
+
+        <import type="android.view.View" />
+
+        <import type="android.text.TextUtils" />
+    </data>
+
+    <ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <zingmyorder.kitchen.mobile.custom.AnimateLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:padding="20dp"
+            app:startAnimation="true">
+
+            <zingmyorder.kitchen.mobile.custom.MyCustomEditText
+                android:id="@+id/fullNameEdt"
+                style="@style/Signup.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/errorTV"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                android:hint="@string/str_full_name"
+                android:imeOptions="actionNext"
+                android:inputType="textNoSuggestions"
+                android:maxLength="50"
+                android:maxLines="1"
+                android:nextFocusForward="@+id/emailEdt"
+                android:singleLine="true" />
+
+            <zingmyorder.kitchen.mobile.custom.MyCustomEditText
+                android:id="@+id/emailEdt"
+                style="@style/Signup.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/errorTV"
+                android:digits="@string/vrob_email_chars"
+                android:hint="@string/str_email_address"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true" />
+
+            <zingmyorder.kitchen.mobile.custom.MyCustomEditText
+                android:id="@+id/addressEdt"
+                style="@style/Signup.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/errorTV"
+                android:hint="Enter Address"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <zingmyorder.kitchen.mobile.custom.CustomTextView
+                    android:id="@+id/countryCodeEdt"
+                    style="@style/Signup.EditText"
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/errorTV"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:hint="+91"
+                     />
+
+                <zingmyorder.kitchen.mobile.custom.MyCustomEditText
+                    android:id="@+id/mobileEdt"
+                    style="@style/Signup.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/errorTV"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight=".6"
+                    android:hint="Enter Mobile No"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <zingmyorder.kitchen.mobile.custom.MyCustomEditText
+                android:id="@+id/pwdEdt"
+                style="@style/Signup.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/ic_open_eye"
+                android:hint="@string/str_password"
+                android:inputType="textPassword"
+                android:singleLine="true" />
+            <LinearLayout
+                android:id="@+id/weak_password_ll"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_marginTop="-13dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="false"
+                    android:maxHeight="20dip"
+                    android:minHeight="20dip"
+                    android:layout_weight="1"
+                    android:progress="0"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="12sp"
+                    android:id="@+id/password_strength" />
+            </LinearLayout>
+
+
+
+            <zingmyorder.kitchen.mobile.custom.MyCustomButton
+                android:id="@+id/login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/frgtPwdTV"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/img_btn_selector"
+                android:enabled="false"
+                android:onClick="@{()-> viewModel.onRegClicked()"
+                android:text="SIGN UP"
+                android:textAllCaps="true"
+                android:textColor="@color/vrob_clr_white" />
+
+<!--            <ImageView-->
+<!--                android:src="@drawable/grocery"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="200dp"/>-->
+        </zingmyorder.kitchen.mobile.custom.AnimateLinearLayout>
+
+    </ScrollView>
+</layout>
